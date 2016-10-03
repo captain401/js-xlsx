@@ -8585,6 +8585,7 @@ function parse_xlml_data(xml, ss, data, cell, base, styles, csty, row, o) {
 			if(!nf || nf == "General") nf = "yyyy-mm-dd";
 			/* falls through */
 		case 'Number':
+			xml = xml.replace(/\,/g, '');
 			if(cell.v === undefined) cell.v=+xml;
 			if(!cell.t) cell.t = 'n';
 			break;
